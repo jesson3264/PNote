@@ -14,14 +14,18 @@ SOURCES += \
     filedock.cpp \
     main.cpp \
     mainwindow.cpp \
-    previewpage.cpp
+    menumanager.cpp \
+    previewpage.cpp \
+    statusmanager.cpp
 
 HEADERS += \
     centralwidget.h \
     document.h \
     filedock.h \
     mainwindow.h \
-    previewpage.h
+    menumanager.h \
+    previewpage.h \
+    statusmanager.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

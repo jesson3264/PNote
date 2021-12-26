@@ -1,9 +1,11 @@
-#ifndef MAINWINDOW_H
+﻿#ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
 #include "document.h"
 #include "centralwidget.h"
 #include "filedock.h"
+#include "menumanager.h"
+#include "statusmanager.h"
 
 #include <QMainWindow>
 
@@ -20,5 +22,8 @@ public:
     Document m_content;
     CentralWidget *m_central;
     FileDock *m_filedock;
+    MenuManager *m_menus;
+    StatusManager *m_statusbar;
+
 };
 #endif // MAINWINDOW_H
