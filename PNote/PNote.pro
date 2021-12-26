@@ -11,6 +11,7 @@ CONFIG += c++11
 SOURCES += \
     centralwidget.cpp \
     document.cpp \
+    filedock.cpp \
     main.cpp \
     mainwindow.cpp \
     previewpage.cpp
@@ -18,6 +19,7 @@ SOURCES += \
 HEADERS += \
     centralwidget.h \
     document.h \
+    filedock.h \
     mainwindow.h \
     previewpage.h
 

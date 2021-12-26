@@ -3,6 +3,7 @@
 
 #include "document.h"
 #include "centralwidget.h"
+#include "filedock.h"
 
 #include <QMainWindow>
 
@@ -18,5 +19,6 @@ public:
 public:
     Document m_content;
     CentralWidget *m_central;
+    FileDock *m_filedock;
 };
 #endif // MAINWINDOW_H
