@@ -17,7 +17,8 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-
+public slots:
+    void About();
 public:
     Document m_content;
     CentralWidget *m_central;
