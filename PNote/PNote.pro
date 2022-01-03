@@ -16,7 +16,13 @@ SOURCES += \
     mainwindow.cpp \
     menumanager.cpp \
     previewpage.cpp \
-    statusmanager.cpp
+    qmarkdown/mainwindow.cpp \
+    qmarkdown/markdownhighlighter.cpp \
+    qmarkdown/qmarkdowntextedit.cpp \
+    qmarkdown/qownlanguagedata.cpp \
+    qmarkdown/qplaintexteditsearchwidget.cpp \
+    statusmanager.cpp \
+    yedit.cpp
 
 HEADERS += \
     centralwidget.h \
@@ -25,7 +31,14 @@ HEADERS += \
     mainwindow.h \
     menumanager.h \
     previewpage.h \
-    statusmanager.h
+    qmarkdown/linenumberarea.h \
+    qmarkdown/mainwindow.h \
+    qmarkdown/markdownhighlighter.h \
+    qmarkdown/qmarkdowntextedit.h \
+    qmarkdown/qownlanguagedata.h \
+    qmarkdown/qplaintexteditsearchwidget.h \
+    statusmanager.h \
+    yedit.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -33,13 +46,26 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 DISTFILES += \
+    media/edit-find-replace.svg \
+    media/format-text-superscript.svg \
+    media/go-bottom.svg \
+    media/go-top.svg \
+    media/window-close.svg \
     resources/3rdparty/MARKDOWN-LICENSE.txt \
     resources/3rdparty/MARKED-LICENSE.txt \
     resources/3rdparty/markdown.css \
     resources/3rdparty/marked.js \
     resources/3rdparty/qt_attribution.json \
     resources/default.md \
-    resources/index.html
+    resources/index.html \
+    resources/media/edit-find-replace.svg \
+    resources/media/format-text-superscript.svg \
+    resources/media/go-bottom.svg \
+    resources/media/go-top.svg \
+    resources/media/window-close.svg
 
 RESOURCES += \
     resources/markdowneditor.qrc
+
+FORMS += \
+    qplaintexteditsearchwidget.ui

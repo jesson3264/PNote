@@ -1,13 +1,17 @@
-#ifndef CENTRALWIDGET_H
+﻿#ifndef CENTRALWIDGET_H
 #define CENTRALWIDGET_H
+#include "document.h"
+#include "previewpage.h"
+#include "yedit.h"
 
 #include <QWidget>
 #include <QSplitter>
 #include <QPlainTextEdit>
 #include <QtWebEngineWidgets/QWebEngineView>
+#include <QSyntaxHighlighter>
 
-#include "document.h"
-#include "previewpage.h"
+#include <qmarkdown/qmarkdowntextedit.h>
+
 class CentralWidget:public QWidget
 {
     Q_OBJECT
@@ -15,7 +19,8 @@ public:
     CentralWidget(QWidget* parent=nullptr);
 
 private:
-    QPlainTextEdit *m_edit;
+    QMarkdownTextEdit *m_edit;
+//    QTextDocument *m_edit;
     QSplitter *m_spliter;
 
     Document * m_doc;
@@ -23,11 +28,9 @@ private:
     QWebChannel *m_channel;
 
     PreviewPage *m_page;
-//    QWebChannel *channel = new QWebChannel(this);
-//    channel->registerObject(QStringLiteral("content"), &m_content);
-//    page->setWebChannel(channel);
 
-//QWebEngineView *preview;
+    QSyntaxHighlighter *m_highlighter;
+
 };
 
 #endif // CENTRALWIDGET_H

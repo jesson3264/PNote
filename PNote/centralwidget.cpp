@@ -1,7 +1,9 @@
-#include "centralwidget.h"
+﻿#include "centralwidget.h"
+
 #include <QtWebChannel>
 #include <QSizePolicy>
 #include <QHBoxLayout>
+#include "qmarkdown/markdownhighlighter.h"
 CentralWidget::CentralWidget(QWidget* parent):QWidget(parent)
 {
     QHBoxLayout *hbl = new QHBoxLayout(this);
@@ -9,7 +11,10 @@ CentralWidget::CentralWidget(QWidget* parent):QWidget(parent)
     m_spliter = new QSplitter(this);
     hbl->addWidget(m_spliter);
     hbl->setStretch(0,1);
-    m_edit = new QPlainTextEdit(this);
+//    m_edit = new QPlainTextEdit(this);
+    m_edit = new QMarkdownTextEdit(this, true);
+//    m_edit->zoomIn(4);
+
     m_view = new QWebEngineView(this);
 
     m_spliter->addWidget(m_edit);
@@ -36,6 +41,8 @@ CentralWidget::CentralWidget(QWidget* parent):QWidget(parent)
     m_view->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
     m_view->setUrl(QUrl("qrc:/index.html"));
+
+    m_highlighter = new MarkdownHighlighter(m_edit->document());
 
 
     QFile defaultTextFile(":/default.md");// 加载默认文件

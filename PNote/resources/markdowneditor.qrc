@@ -4,5 +4,10 @@
         <file>index.html</file>
         <file>3rdparty/markdown.css</file>
         <file>3rdparty/marked.js</file>
+        <file>media/edit-find-replace.svg</file>
+        <file>media/format-text-superscript.svg</file>
+        <file>media/go-bottom.svg</file>
+        <file>media/go-top.svg</file>
+        <file>media/window-close.svg</file>
     </qresource>
 </RCC>
